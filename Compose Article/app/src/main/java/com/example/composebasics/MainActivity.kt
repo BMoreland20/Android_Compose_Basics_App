@@ -57,7 +57,7 @@ fun ComposeBasicAppWithImage (tutorial: String, paragraphI: String, paragraphII:
         text = tutorial,
         fontSize = 24.sp,
         modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 117.dp)
+            .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 140.dp)
     )
         Text(
             text = paragraphI,
