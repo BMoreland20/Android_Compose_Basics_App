@@ -1,1 +1,2 @@
 # Android_Compose_Basics_App
+Basic compose apps.  These apps are designed to simply show customized Compose layouts of text and image files.  There is no additional functionality with the provided apps.
