@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ComposeBasicAppWithImage(stringResource(R.string.tutorial_text), stringResource(R.string.paragraph_i), stringResource(R.string.paragraph_ii))
+                    ComposeBasicAppWithImage(stringResource(R.string.title), stringResource(R.string.shortDescription), stringResource(R.string.longDescription))
                 }
             }
         }
@@ -41,36 +41,39 @@ class MainActivity : ComponentActivity() {
 fun ComposeBasicAppWithImage (tutorial: String, paragraphI: String, paragraphII: String, modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.bg_compose_background)
     // Creating column so that text doesn't overlap
-    Box {
-        Image(
-            painter = image,
-            contentDescription = null,
-            contentScale = ContentScale.FillWidth
-        )
-    }
-    Column (
+    Box (
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column (
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
-            ){
-    Text(
-        text = tutorial,
-        fontSize = 24.sp,
-        modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 140.dp)
-    )
-        Text(
-            text = paragraphI,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 16.dp)
-        )
-        Text(
-            text = paragraphII,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = 16.dp)
-        )
+            ) {
+
+            Image(
+                painter = image,
+                contentDescription = null,
+                contentScale = ContentScale.FillWidth
+            )
+            Text(
+                text = tutorial,
+                fontSize = 24.sp,
+                modifier = Modifier
+                    .padding(16.dp)
+            )
+            Text(
+                text = paragraphI,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .padding(start = 16.dp, end = 16.dp, top = 16.dp)
+            )
+            Text(
+                text = paragraphII,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .padding(16.dp)
+            )
+        }
     }
 }
 
@@ -78,6 +81,6 @@ fun ComposeBasicAppWithImage (tutorial: String, paragraphI: String, paragraphII:
 @Composable
 fun ComposeBasicApp() {
     ComposeBasicsTheme {
-        ComposeBasicAppWithImage(stringResource(R.string.tutorial_text), stringResource(R.string.paragraph_i), stringResource(R.string.paragraph_ii))
+        ComposeBasicAppWithImage(stringResource(R.string.title), stringResource(R.string.shortDescription), stringResource(R.string.longDescription))
     }
 }
