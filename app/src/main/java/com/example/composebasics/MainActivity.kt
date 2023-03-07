@@ -74,7 +74,7 @@ fun ComposeBasicAppWithImage (tutorial: String, paragraphI: String, paragraphII:
     }
 }
 
-@Preview(showBackground = false)
+@Preview(showBackground = true)
 @Composable
 fun ComposeBasicApp() {
     ComposeBasicsTheme {
