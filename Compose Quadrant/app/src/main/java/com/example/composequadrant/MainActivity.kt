@@ -3,11 +3,10 @@ package com.example.composequadrant
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.composequadrant.ui.theme.ComposeQuadrantTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,44 +41,44 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ComposeQuadrantApp(Title1: String, TextComposable: String, Title2: String, ImageComposable: String, Title3: String, RowComposable: String,
                        Title4: String, ColumnComposable: String, modifier: Modifier = Modifier) {
-    Box (
-        modifier = Modifier.fillMaxSize()
-            ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text(
-                text = Title1,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = TextComposable
-            )
-            Text(
-                text = Title2,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = ImageComposable
-            )
-            Text(
-                text = Title3,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = RowComposable)
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = Title1,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = TextComposable
+        )
+        Text(
+            text = Title2,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = ImageComposable
+        )
+        Text(
+            text = Title3,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = RowComposable)
 
-            Text(
-                text = Title4,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = ColumnComposable
-            )
+        Text(
+            text = Title4,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = ColumnComposable
+        )
         }
     }
-}
 
 @Preview(showBackground = true)
 @Composable
