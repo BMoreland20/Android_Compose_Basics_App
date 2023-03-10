@@ -3,6 +3,7 @@ package com.example.composequadrant
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composequadrant.ui.theme.ComposeQuadrantTheme
 
@@ -43,22 +45,34 @@ fun ComposeQuadrantApp(Title1: String, TextComposable: String, Title2: String, I
         modifier = Modifier.fillMaxSize()
             ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = Title1)
+                text = Title1,
+                fontWeight = FontWeight.Bold
+            )
             Text(
-                text = TextComposable)
+                text = TextComposable
+            )
             Text(
-                text = Title2)
+                text = Title2,
+                fontWeight = FontWeight.Bold
+            )
             Text(
-                text = ImageComposable)
+                text = ImageComposable
+            )
             Text(
-                text = Title3)
+                text = Title3,
+                fontWeight = FontWeight.Bold
+            )
             Text(
                 text = RowComposable)
+
             Text(
-                text = Title4)
+                text = Title4,
+                fontWeight = FontWeight.Bold
+            )
             Text(
                 text = ColumnComposable
             )
